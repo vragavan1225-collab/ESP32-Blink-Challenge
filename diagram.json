@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "author": "Nigun",
+  "editor": "wokwi",
+
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+
+    {
+      "type": "wokwi-potentiometer",
+      "id": "voltage",
+      "top": -180,
+      "left": 320,
+      "attrs": {
+        "value": "512"
+      }
+    },
+
+    {
+      "type": "wokwi-potentiometer",
+      "id": "current",
+      "top": -20,
+      "left": 320,
+      "attrs": {
+        "value": "512"
+      }
+    },
+
+    {
+      "type": "wokwi-potentiometer",
+      "id": "rpm",
+      "top": 140,
+      "left": 320,
+      "attrs": {
+        "value": "512"
+      }
+    },
+
+    {
+      "type": "wokwi-ds18b20",
+      "id": "temperature",
+      "top": 300,
+      "left": 330,
+      "attrs": {
+        "temperature": "33"
+      }
+    },
+
+    {
+      "type": "wokwi-mpu6050",
+      "id": "vibration",
+      "top": 430,
+      "left": 320,
+      "attrs": {}
+    }
+  ],
+
+  "connections": [
+
+    [
+      "esp:3V3",
+      "voltage:VCC",
+      "red",
+      []
+    ],
+
+    [
+      "esp:GND.1",
+      "voltage:GND",
+      "black",
+      []
+    ],
+
+    [
+      "esp:34",
+      "voltage:SIG",
+      "orange",
+      []
+    ],
+
+
+    [
+      "esp:3V3",
+      "current:VCC",
+      "red",
+      []
+    ],
+
+    [
+      "esp:GND.1",
+      "current:GND",
+      "black",
+      []
+    ],
+
+    [
+      "esp:35",
+      "current:SIG",
+      "orange",
+      []
+    ],
+
+
+    [
+      "esp:3V3",
+      "rpm:VCC",
+      "red",
+      []
+    ],
+
+    [
+      "esp:GND.1",
+      "rpm:GND",
+      "black",
+      []
+    ],
+
+    [
+      "esp:32",
+      "rpm:SIG",
+      "orange",
+      []
+    ],
+
+
+    [
+      "esp:3V3",
+      "temperature:VCC",
+      "red",
+      []
+    ],
+
+    [
+      "esp:GND.1",
+      "temperature:GND",
+      "black",
+      []
+    ],
+
+    [
+      "esp:4",
+      "temperature:DQ",
+      "green",
+      []
+    ],
+
+
+    [
+      "esp:3V3",
+      "vibration:VCC",
+      "red",
+      []
+    ],
+
+    [
+      "esp:GND.1",
+      "vibration:GND",
+      "black",
+      []
+    ],
+
+    [
+      "esp:21",
+      "vibration:SDA",
+      "green",
+      []
+    ],
+
+    [
+      "esp:22",
+      "vibration:SCL",
+      "blue",
+      []
+    ]
+  ],
+
+  "serialMonitor": {
+    "display": "always",
+    "newline": "lf"
+  }
+}
